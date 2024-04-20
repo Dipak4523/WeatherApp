@@ -1,2 +1,2 @@
 # WeatherApp
-WeatherApp is display any weather temp
+WeatherApp is display any weather 
