@@ -1,29 +1,25 @@
 # WeatherApp
-WeatherApp is display any weather 
+Weather Application.
 
-Dear Customer!
+In App, Display Weather information like temperature,feels likes,humidity,wind.
 
+I Have Create 2 Bloc Classes,
+1)Network Bloc : It is Used to Check Your Device Connected to the Internet or not.
+2)Weather Bloc : It is Used to fetch the weather details information using weather repository and display Data into UI.
 
-Thank you for subscribing to Free OpenWeatherMap!
+In Data Folder is collection of static key words.
 
-API key:
-- Your API key is 60116f93fad327356216e10e741fda13
-- Within the next couple of hours, it will be activated and ready to use
-- You can later create more API keys on your account page
-- Please, always use your API key in each API call
+In Pages is collection of no of pages.
+In Model is a collection of Data Variables.
 
-Endpoint:
-- Please, use the endpoint api.openweathermap.org for your API calls
-- Example of API call:
-  api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=60116f93fad327356216e10e741fda13
+How To Run App.
 
-Useful links:
-- API documentation https://openweathermap.org/api
-- Details of your plan https://openweathermap.org/price
-- Please, note that 16-days daily forecast and History API are not available for Free subscribers
+It is Simple git clone url.
 
+Create a basic Flutter weather application that fetches weather data from an API and displays it using the BLoC architecture. Focus on essential features, clean code, and efficient state management.
 
-Blog
-Support center & FAQ
-Contact us info@openweathermap.org.
+https://github.com/Dipak4523/WeatherApp.git
+
+I will Share My Some more Repository Which I have/wil worked or committed by me into this repository.
+
 
