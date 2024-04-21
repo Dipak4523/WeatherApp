@@ -33,7 +33,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 if (state is NetworkFailure) {
                   return const Text("No Internet Connection",style: TextStyle(fontSize: 16,color: Colors.black),);
                 } else if (state is NetworkSuccess) {
-                  return const Text("You're Connected to Internet",style: TextStyle(fontSize: 16,color: Colors.black));
+                  return const SizedBox.shrink();
                 } else {
                   return const SizedBox.shrink();
                 }
