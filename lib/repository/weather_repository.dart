@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:js_interop';
 
 import 'package:weather_app/data/api_endpoints.dart';
 import 'package:weather_app/model/error_model.dart';
@@ -13,7 +12,6 @@ class WeatherRepository {
       return WeatherModel.fromJson(jsonDecode(response.body.toString()));
     } else {
       return ErrorHandler.fromJson(jsonDecode(response.body.toString()));
-      //throw Exception("Failed to get weather");
     }
   }
 }

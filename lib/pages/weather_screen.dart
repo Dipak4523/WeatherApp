@@ -2,10 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/bloc/network_bloc.dart';
 import 'package:weather_app/bloc/weather_bloc.dart';
-import 'package:weather_app/model/weather_model.dart';
-
-import '../repository/weather_repository.dart';
 
 class WeatherScreen extends StatefulWidget {
   @override
@@ -13,12 +11,13 @@ class WeatherScreen extends StatefulWidget {
 }
 class _WeatherScreenState extends State<WeatherScreen> {
   final _locationController = TextEditingController();
-// final _weatherBloc = WeatherBloc(WeatherRepository());
   WeatherBloc? _weatherBloc;
+  NetworkBloc? _networkBloc;
 
   @override
   Widget build(BuildContext context) {
     _weatherBloc = BlocProvider.of<WeatherBloc>(context);
+    _networkBloc = BlocProvider.of<NetworkBloc>(context);
     return  Scaffold(
       appBar: AppBar(
         title: const Text("Weather App"),
@@ -27,6 +26,20 @@ class _WeatherScreenState extends State<WeatherScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+            const SizedBox(height: 16),
+            BlocBuilder<NetworkBloc, NetworkState>(
+              bloc: _networkBloc?..add(NetworkObserve()),
+              builder: (context, state) {
+                if (state is NetworkFailure) {
+                  return const Text("No Internet Connection",style: TextStyle(fontSize: 16,color: Colors.black),);
+                } else if (state is NetworkSuccess) {
+                  return const Text("You're Connected to Internet",style: TextStyle(fontSize: 16,color: Colors.black));
+                } else {
+                  return const SizedBox.shrink();
+                }
+              },
+            ),
+            const SizedBox(height: 16),
             TextField(
               controller: _locationController,
               decoration: const InputDecoration(
@@ -101,11 +114,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
           ],
     );
   }
-
-
-
-
-
 
   @override
   void dispose() {
