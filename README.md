@@ -14,7 +14,8 @@ In Model is a collection of Data Variables.
 
 How To Run App.
 
-It is Simple git clone url.
+It is Simple git clone code into your pc and run the main.dart files.
+
 
 Create a basic Flutter weather application that fetches weather data from an API and displays it using the BLoC architecture. Focus on essential features, clean code, and efficient state management.
 
